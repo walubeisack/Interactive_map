@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Renewable Energy Explorer</title>
+
+
+    <!-- Leaflet CSS -->
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+
+    <!-- Our CSS -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <header>
+
+        <h1>Renewable Energy Explorer</h1>
+
+        <p>
+            Interactive map of renewable energy facilities
+        </p>
+
+    </header>
+
+
+<main>
+
+  <div class="map-container">
+
+    <div id="map"></div>
+
+    <div class="legend">
+
+        <h3>Legend</h3>
+
+        <div class="legend-item">
+            <span class="legend-marker solar-legend">☀</span>
+            <span>Solar</span>
+        </div>
+
+        <div class="legend-item">
+            <span class="legend-marker wind-legend">⚑</span>
+            <span>Wind</span>
+        </div>
+
+      </div>
+
+  </div>
+
+</main>
+
+
+    <!-- Leaflet JavaScript -->
+
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+    </script>
+
+
+    <!-- Our JavaScript -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
