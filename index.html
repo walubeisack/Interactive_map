@@ -5,79 +5,146 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Renewable Energy Explorer</title>
 
-
     <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 
-    <link
-        rel="stylesheet"
-        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    >
-
-
-    <!-- Our CSS -->
-
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
-
 <body>
 
+    <!-- ================================= -->
+    <!-- HEADER -->
+    <!-- ================================= -->
 
     <header>
 
         <h1>Renewable Energy Explorer</h1>
 
         <p>
-            Interactive map of renewable energy facilities
+            Interactive map and analytics of renewable energy facilities
+            across the United States
         </p>
 
     </header>
 
 
-<main>
+    <main>
 
-  <div class="map-container">
+        <!-- ================================= -->
+        <!-- STATISTICS DASHBOARD -->
+        <!-- ================================= -->
 
-    <div id="map"></div>
+        <section class="dashboard">
 
-    <div class="legend">
+            <div class="stat-card">
 
-        <h3>Legend</h3>
+                <h3>Total Facilities</h3>
 
-        <div class="legend-item">
-            <span class="legend-marker solar-legend">☀</span>
-            <span>Solar</span>
-        </div>
+                <p id="total-facilities">14</p>
 
-        <div class="legend-item">
-            <span class="legend-marker wind-legend">⚑</span>
-            <span>Wind</span>
-        </div>
-
-      </div>
-
-  </div>
-
-</main>
+            </div>
 
 
-    <!-- Leaflet JavaScript -->
+            <div class="stat-card">
 
-    <script
-        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+                <h3>Solar Facilities</h3>
+
+                <p id="solar-facilities">12</p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3>Wind Facilities</h3>
+
+                <p id="wind-facilities">2</p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3>Total Installed Capacity</h3>
+
+                <p id="total-capacity">5,813 MW</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================= -->
+        <!-- MAP SECTION -->
+        <!-- ================================= -->
+
+        <section class="map-section">
+
+            <h2>Renewable Energy Facility Distribution</h2>
+
+            <p>
+                Explore solar and wind facilities across the United States.
+                Select individual markers to view facility information.
+            </p>
+
+
+            <div class="map-container">
+
+                <div id="map"></div>
+
+
+                <!-- MAP LEGEND -->
+
+                <div class="legend">
+
+                    <h3>Legend</h3>
+
+                    <div class="legend-item">
+
+                        <span class="legend-marker solar-legend">
+                            ☀
+                        </span>
+
+                        <span>Solar</span>
+
+                    </div>
+
+
+                    <div class="legend-item">
+
+                        <span class="legend-marker wind-legend">
+                            ⚑
+                        </span>
+
+                        <span>Wind</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================================= -->
+    <!-- LEAFLET JAVASCRIPT -->
+    <!-- ================================= -->
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
     </script>
 
 
-    <!-- Our JavaScript -->
+    <!-- CUSTOM JAVASCRIPT -->
 
     <script src="script.js"></script>
 

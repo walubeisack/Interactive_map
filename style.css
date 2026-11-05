@@ -13,26 +13,122 @@ body {
     color: #10251f;
 }
 
+main {
+    padding: 25px 30px 35px;
+}
+
 
 /* ========================================
    HEADER
 ======================================== */
 
 header {
-    padding: 20px 30px;
-    background: #f5f6f1;
-    border-bottom: 1px solid #ddd;
+    padding: 24px 30px;
+    background: #ffffff;
+    border-bottom: 1px solid #e1e5df;
 }
 
 header h1 {
-    margin: 0 0 5px;
-    font-size: 26px;
+    margin: 0 0 7px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #10251f;
 }
 
 header p {
     margin: 0;
     color: #66736e;
     font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   DASHBOARD STATISTICS
+======================================== */
+
+.dashboard {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: #ffffff;
+
+    padding: 22px;
+
+    border-radius: 12px;
+
+    border: 1px solid #e4e8e2;
+
+    box-shadow:
+        0 2px 8px rgba(16, 37, 31, 0.04);
+
+    transition: transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 5px 15px rgba(16, 37, 31, 0.09);
+}
+
+.stat-card h3 {
+    margin: 0 0 12px;
+
+    color: #66736e;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.06em;
+}
+
+.stat-card p {
+    margin: 0;
+
+    font-size: 29px;
+
+    font-weight: 700;
+
+    color: #174b3a;
+}
+
+
+/* ========================================
+   MAP SECTION
+======================================== */
+
+.map-section {
+    margin-top: 10px;
+}
+
+.map-section h2 {
+    margin: 0 0 7px;
+
+    font-size: 21px;
+
+    color: #10251f;
+}
+
+.map-section>p {
+    margin: 0 0 18px;
+
+    color: #66736e;
+
+    font-size: 14px;
+
+    line-height: 1.5;
 }
 
 
@@ -42,12 +138,27 @@ header p {
 
 .map-container {
     position: relative;
-    height: calc(100vh - 100px);
+
+    height: 650px;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    border: 1px solid #dce2dc;
+
+    box-shadow:
+        0 3px 14px rgba(16, 37, 31, 0.08);
 }
 
 #map {
     width: 100%;
+
     height: 100%;
+
+    background: #e9eee9;
 }
 
 
@@ -75,6 +186,7 @@ header p {
     color: white;
 
     font-size: 21px;
+
     font-weight: bold;
 
     text-align: center;
@@ -107,14 +219,16 @@ header p {
 
     z-index: 1000;
 
-    background: white;
+    background: rgba(255, 255, 255, 0.96);
 
-    padding: 15px 18px;
+    padding: 16px 19px;
 
     border-radius: 10px;
 
+    border: 1px solid #e4e8e2;
+
     box-shadow:
-        0 3px 12px rgba(0, 0, 0, 0.2);
+        0 3px 12px rgba(0, 0, 0, 0.16);
 }
 
 
@@ -128,6 +242,8 @@ header p {
     text-transform: uppercase;
 
     letter-spacing: 0.08em;
+
+    color: #10251f;
 }
 
 
@@ -143,6 +259,8 @@ header p {
     margin-top: 8px;
 
     font-size: 13px;
+
+    color: #44534c;
 }
 
 
@@ -187,8 +305,41 @@ header p {
 
 
 /* ========================================
+   LEAFLET CONTROLS
+======================================== */
+
+.leaflet-control-layers {
+    border: 1px solid #e4e8e2 !important;
+
+    border-radius: 8px !important;
+
+    padding: 7px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+}
+
+.leaflet-control-zoom a {
+    color: #174b3a !important;
+}
+
+.leaflet-control-scale-line {
+    border-color: #174b3a;
+
+    color: #174b3a;
+
+    background: rgba(255, 255, 255, 0.9);
+}
+
+
+/* ========================================
    LEAFLET POPUPS
 ======================================== */
+
+.leaflet-popup-content-wrapper {
+    border-radius: 10px;
+}
 
 .leaflet-popup-content {
     margin: 14px 16px;
@@ -202,6 +353,8 @@ header p {
     margin: 0 0 10px;
 
     font-size: 17px;
+
+    color: #174b3a;
 }
 
 .leaflet-popup-content p {
@@ -209,33 +362,80 @@ header p {
 
     font-size: 13px;
 
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 
 /* ========================================
-   MOBILE
+   MOBILE RESPONSIVENESS
 ======================================== */
+
+@media (max-width: 900px) {
+
+    .dashboard {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .map-container {
+        height: 550px;
+    }
+
+}
+
 
 @media (max-width: 600px) {
 
+    main {
+        padding: 18px 15px 25px;
+    }
+
     header {
-        padding: 15px 18px;
+        padding: 18px;
     }
 
     header h1 {
-        font-size: 21px;
+        font-size: 22px;
     }
 
     header p {
         font-size: 12px;
     }
 
+    .dashboard {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 10px;
+
+        margin-bottom: 24px;
+    }
+
+    .stat-card {
+        padding: 15px;
+    }
+
+    .stat-card h3 {
+        font-size: 10px;
+    }
+
+    .stat-card p {
+        font-size: 23px;
+    }
+
+    .map-section h2 {
+        font-size: 18px;
+    }
+
+    .map-container {
+        height: 480px;
+
+        border-radius: 10px;
+    }
+
     .legend {
         bottom: 15px;
-        left: 15px;
+        left: 12px;
 
-        padding: 12px 14px;
+        padding: 11px 13px;
     }
 
 }
